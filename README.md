@@ -14,13 +14,13 @@ Try the live demo: https://brunorb.github.io/firstFollow/
 
 or
 
-`npm install firstFollow`
+`npm install firstfollow`
 
 then for node:
 
 
     var myGrammar = 'A -> b w';
-    var firstFollow = require('firstFollow');
+    var firstFollow = require('firstfollow');
     var data = firstFollow(myGrammar);
     var computedFirstSet = data.firstSet;
     var computedFollowSet = data.followSet;
