@@ -1,0 +1,30 @@
+{
+	"name": "first-follow",
+	"version": "1.0.0",
+	"description": "Compute first and follow sets",
+	"keywords": [
+		"compilers",
+		"fist sets",
+		"follow sets"
+	],
+	"homepage": "https://brunorb.github.io/first-follow/",
+	"license": "MIT",
+	"author": {
+		"name": "Bruno Roberto Búrigo",
+		"url": "https://coderoftomorrow.com"
+	},
+	"main": "src/main.js",
+	"browser": "src/main.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/BrunoRB/first-follow"
+	},
+	"scripts": {
+		"test": "node_modules/.bin/eslint -c .eslintrc.json src/ ; node_modules/.bin/mocha test/"
+	},
+	"devDependencies": {
+		"chai": "latest",
+		"eslint": "latest",
+		"mocha": "latest"
+	}
+}
