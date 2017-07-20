@@ -1,3 +1,4 @@
 node_modules/
 nohup.out
 yarn.lock
+npm-debug.log

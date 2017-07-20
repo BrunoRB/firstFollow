@@ -1,5 +1,5 @@
 {
-	"name": "first-follow",
+	"name": "firstFollow",
 	"version": "1.0.0",
 	"description": "Compute first and follow sets",
 	"keywords": [
@@ -7,7 +7,7 @@
 		"fist sets",
 		"follow sets"
 	],
-	"homepage": "https://brunorb.github.io/first-follow/",
+	"homepage": "https://brunorb.github.io/firstFollow/",
 	"license": "MIT",
 	"author": {
 		"name": "Bruno Roberto Búrigo",
@@ -17,7 +17,7 @@
 	"browser": "src/main.js",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/BrunoRB/first-follow"
+		"url": "https://github.com/BrunoRB/firstFollow"
 	},
 	"scripts": {
 		"test": "node_modules/.bin/eslint -c .eslintrc.json src/ ; node_modules/.bin/mocha test/"

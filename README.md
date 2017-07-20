@@ -1,26 +1,26 @@
-# first-follow
+# firstFollow
 
 Simples javascript script that computes FIRST and FOLLOW sets for context-free grammars.
 
 ## Grammar format
 
- - Check https://brunorb.github.io/first-follow#rules
+ - Check https://brunorb.github.io/firstFollow#rules
  - [test/grammar.js](test/grammar.js) contains some examples
  - grammars copied from compilers books like the Dragon Book should work just fine
 
 ## Installing / Running
 
-Try the live demo: https://brunorb.github.io/first-follow/
+Try the live demo: https://brunorb.github.io/firstFollow/
 
 or
 
-`npm install first-follow`
+`npm install firstFollow`
 
 then for node:
 
 
     var myGrammar = 'A -> b w';
-    var firstFollow = require('firstfollow');
+    var firstFollow = require('firstFollow');
     var data = firstFollow(myGrammar);
     var computedFirstSet = data.firstSet;
     var computedFollowSet = data.followSet;
@@ -37,4 +37,4 @@ for the browser:
 
 ## License
 
-[The MIT License](LICENSE.md)
+[The MIT License](LICENSE)
