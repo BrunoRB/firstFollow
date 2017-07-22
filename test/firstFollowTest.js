@@ -126,17 +126,19 @@ describe('First-follow', function() {
 	it('should compute the sets of a mutually recursive grammar' + grammars.mutuallyRecursiveThree, function() {
 		var expectedFirst = {
 			"S": {'': 1, '(': 1, 'x': 1, 'y': 1},
-			"A": {'': 1, 'x': 1, 'y': 1},
-			"B": {'': 1, 'y': 1, '(': 1, 'x': 1},
-			"x": {x: 1},
-			"y": {y: 1},
+			"A": {'': 1, '(': 1, 'x': 1, 'y': 1},
+			"B": {'y': 1, '(': 1, 'x': 1},
+			"x": {'x': 1},
+			"y": {'y': 1},
+			"(": {'(': 1},
+			")": {')': 1}
 		};
 		var expectedFollow = {
-			"S": {},
-			"A": {},
-			"B": {}
+			"S": {'$': 1, 'y': 1, 'x': 1, '(': 1, ')': 1},
+			"A": {'(': 1},
+			"B": {'$': 1, 'y': 1, 'x': 1, '(': 1, ')': 1}
 		};
 
-		testSets(grammars.mutuallyRecursiveThree, expectedFirst);
+		testSets(grammars.mutuallyRecursiveThree, expectedFirst, expectedFollow);
     });
 });

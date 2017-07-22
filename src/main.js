@@ -124,15 +124,15 @@ var firstFollow = (function() {
                     this.addToFirstSet(symbol, symbol);
                 }
                 else {
+                    // set to true when the first derivation has epsilon in its first set,
+                    // it remains true as long as the subsequent derivation also contain '' in their first sets.
                     var addEpsilon = false;
                     derivationList.forEach((derivation, index) => {
                         if (derivation === '') {
                             this.firstSet[symbol][''] = 1;
                         }
                         else {
-                            var prevDerivation = index > 0 ? derivationList[index - 1] : null;
-                            var prevDerivationFirstSet = this.firstSet[derivationList[index - 1]] || {};
-                            if (index === 0 || '' in prevDerivationFirstSet) {
+                            if (index === 0 || addEpsilon) {
                                 var fSet = this.firstSet[derivation] || {};
 
                                 // only add epsilon to firt(X) if epsilon is in all k for X -> Y1, Y2...Yk
@@ -150,6 +150,7 @@ var firstFollow = (function() {
                             // 2.
                             // If there is a production A -> aBb, then everything in FIRST(b) except EPSILON
                             // is in FOLLOW(B)
+                            var prevDerivation = index > 0 ? derivationList[index - 1] : null;
                             if (prevDerivation && this.isNonTerminal(prevDerivation)) {
                                 for (ws in this.firstSet[derivation]) {
                                     if (ws === '') {
