@@ -23,8 +23,8 @@
 		"test": "node_modules/.bin/eslint -c .eslintrc.json src/ ; node_modules/.bin/mocha test/"
 	},
 	"devDependencies": {
-		"chai": "latest",
-		"eslint": "latest",
-		"mocha": "latest"
+		"chai": "4.1.*",
+		"eslint": "4.3.*",
+		"mocha": "3.4.*"
 	}
 }
