@@ -34,9 +34,9 @@ module.exports = {
     `,
 
     mutuallyRecursiveThree: `
-        S -> A ( S ) BW | ε
-        A -> S | S BW | x | ε
-        BW -> S BW | y w
+        S → A ( S ) B ∣ ϵ
+        A → S ∣ S B ∣ x ∣ ϵ
+        B → S B ∣ y
     `,
 
     mutuallyRecursiveFour: `

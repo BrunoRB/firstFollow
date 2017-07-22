@@ -10,8 +10,12 @@ var testSets = function(grammar, expectedFirst, expectedFollow) {
 	var firstSet = g.firstSet;
 	var followSet = g.followSet;
 
-	assert.deepEqual(expectedFirst, firstSet);
-	assert.deepEqual(expectedFollow, followSet);
+	if (expectedFirst) {
+		assert.deepEqual(expectedFirst, firstSet);
+	}
+	if (expectedFollow) {
+		assert.deepEqual(expectedFollow, followSet);
+	}
 };
 
 describe('First-follow', function() {
@@ -117,5 +121,22 @@ describe('First-follow', function() {
 		};
 
 		testSets(grammars.mutuallyRecursiveTwo, expectedFirst, expectedFollow);
+    });
+
+	it('should compute the sets of a mutually recursive grammar' + grammars.mutuallyRecursiveThree, function() {
+		var expectedFirst = {
+			"S": {'': 1, '(': 1, 'x': 1, 'y': 1},
+			"A": {'': 1, 'x': 1, 'y': 1},
+			"B": {'': 1, 'y': 1, '(': 1, 'x': 1},
+			"x": {x: 1},
+			"y": {y: 1},
+		};
+		var expectedFollow = {
+			"S": {},
+			"A": {},
+			"B": {}
+		};
+
+		testSets(grammars.mutuallyRecursiveThree, expectedFirst);
     });
 });

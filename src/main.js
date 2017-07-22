@@ -23,10 +23,10 @@ var firstFollow = (function() {
                 throw `Invalid rule ${rule}`;
             }
             var symbol = data[0];
-            var derivation = (data[1] || '').replace(/ε/g, '').trim();
+            var derivation = (data[1] || '').replace(/ε|ϵ/g, '').trim();
 
             // split multiple derivations
-            return derivation.split('|').map(function(d) {
+            return derivation.split(/\||∣/).map(function(d) {
                 return new Production(
                     symbol.replace(/\s+/, ''),
                     d.trim().split(/\s+/)
