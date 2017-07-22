@@ -130,11 +130,11 @@ var firstFollow = (function() {
                 }
                 else {
                     // set to true when the first derivation has epsilon in its first set,
-                    // it remains true as long as the subsequent derivation also contain '' in their first sets.
+                    // it remains true as long as the subsequent derivations also contain '' in their first sets.
                     var addEpsilon = false;
                     derivationList.forEach(function(derivation, index) {
                         if (derivation === '') {
-                            that.firstSet[symbol][''] = 1;
+                            that.addToFirstSet(symbol, '');
                         }
                         else {
                             if (index === 0 || addEpsilon) {
